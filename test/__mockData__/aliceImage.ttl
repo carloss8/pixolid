@@ -1,0 +1,14 @@
+@prefix : <#>.
+@prefix as: <https://www.w3.org/ns/activitystreams#>.
+@prefix n: <http://rdfs.org/sioc/ns#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix c: </profile/card#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<>
+    a n:Post;
+    terms:created "2019-01-23T15:55:55.346Z"^^XML:dateTime;
+    terms:creator c:me;
+    terms:description "Alice's new house.";
+    foaf:depiction <12345.jpeg>.

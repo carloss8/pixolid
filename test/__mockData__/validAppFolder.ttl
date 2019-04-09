@@ -1,0 +1,31 @@
+@prefix : <#>.
+@prefix pix: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix com: <comments/>.
+@prefix im: <images/>.
+@prefix likes: <likes/>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+
+pix:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2019-03-23T15:28:26Z"^^XML:dateTime;
+    ldp:contains com:, im:, likes:;
+    st:mtime 1553354906.972;
+    st:size 4096.
+com:
+    a ldp:BasicContainer, ldp:Container, ldp:Resource;
+    terms:modified "2019-04-05T16:50:35Z"^^XML:dateTime;
+    st:mtime 1554483035.494;
+    st:size 4096.
+im:
+    a ldp:BasicContainer, ldp:Container, ldp:Resource;
+    terms:modified "2019-04-02T20:40:58Z"^^XML:dateTime;
+    st:mtime 1554237658.288;
+    st:size 4096.
+likes:
+    a ldp:BasicContainer, ldp:Container, ldp:Resource;
+    terms:modified "2019-04-03T07:04:20Z"^^XML:dateTime;
+    st:mtime 1554275060.653;
+    st:size 4096.

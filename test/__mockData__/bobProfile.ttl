@@ -1,0 +1,9 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix pix: </public/pixolid/>.
+:me solid:timeline pix:;
+    foaf:name "Bob";
+    foaf:img <bob-profile.jpg>;
+    foaf:knows <http://tom.example.org/profile/card#me>;
+    foaf:knows <http://alice.example.org/profile/card#me>.

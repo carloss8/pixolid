@@ -1,0 +1,11 @@
+@prefix : <#>.
+@prefix as: <https://www.w3.org/ns/activitystreams#>.
+@prefix c: </profile/card#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+<>
+    as:actor c:me;
+    as:content "Nice car dude!";
+    as:inReplyTo <http://tom.example.org/public/pixolid/images/12345.ttl>;
+    as:published "2019-03-26T12:20:00.010Z"^^XML:dateTime;
+    as:type as:Note.

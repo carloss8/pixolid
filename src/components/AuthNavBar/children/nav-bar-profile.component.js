@@ -1,0 +1,78 @@
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Dropdown } from "@util-components";
+import { Link } from "react-router-dom";
+
+import auth from "solid-auth-client";
+
+
+export const ImageContainer = styled.div`
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-size: cover;
+  overflow: hidden;
+  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  display: ${({ show }) => (show ? "block" : "none")};;`;
+
+export const Img = styled.img`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+`;
+
+export const LoadingImage = styled(ImageContainer)`
+  background: #cccccc;
+  display:block;
+`;
+
+
+class NavBarProfile extends Component {
+  state = {
+    imageLoaded: false
+  };
+
+  onImageLoaded = async () => this.setState({ imageLoaded: true });
+  logOut = async () => {
+    try {
+      await auth.logout();
+      // Remove localStorage
+      localStorage.removeItem("solid-auth-client");
+      // Redirect to login page
+      this.props.history.push("/login");
+    } catch (error) {
+      // console.log(`Error: ${error}`);
+    }
+  };
+  render() {
+    const { img } = this.props;
+    const { imageLoaded } = this.state;
+
+    const profileOpts = [
+      {
+        label: "Log Out",
+        onClick: this.logOut
+      }
+    ];
+
+    return img ? (
+      <Dropdown actions={profileOpts} className="nav-bar--profile" hover={true}>
+      <ImageContainer show={imageLoaded}>
+        <Link to="/user/profile">
+          <Img
+            show={imageLoaded}
+            src={img}
+            alt="profile"
+            onLoad={this.onImageLoaded}/>
+        </Link>
+      </ImageContainer>
+        {!imageLoaded && <LoadingImage show={true}/>}
+      </Dropdown>
+    ) : (
+      <Dropdown actions={profileOpts} className="nav-bar--profile" hover={true}>
+      </Dropdown>
+    );
+  }
+}
+
+export default NavBarProfile;

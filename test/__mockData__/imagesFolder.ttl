@@ -1,0 +1,26 @@
+@prefix : <#>.
+@prefix im: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+@prefix jpeg: <http://www.w3.org/ns/iana/media-types/image/jpeg#>.
+@prefix tur: <http://www.w3.org/ns/iana/media-types/text/turtle#>.
+
+im:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2019-04-02T20:40:58Z"^^XML:dateTime;
+    ldp:contains
+        <12345.jpeg>, <12345.ttl>;
+    st:mtime 1554237658.288;
+    st:size 4096.
+<12345.jpeg>
+    a jpeg:Resource, ldp:Resource;
+    terms:modified "2019-03-23T15:51:21Z"^^XML:dateTime;
+    st:mtime 1553356281.269;
+    st:size 8060.
+<12345.ttl>
+    a tur:Resource, ldp:Resource;
+    terms:modified "2019-04-03T07:04:21Z"^^XML:dateTime;
+    st:mtime 1554275061.193;
+    st:size 939.
