@@ -1,5 +1,7 @@
 # Pixolid
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a969ffe-0a42-4f50-b58f-4637a95ab4d5/deploy-status)](https://app.netlify.com/sites/pixolid/deploys)
+
 Pixolid is a Web application built to support the Solid framework.
 Its purpose is to manage, upload, comment, and like images via the Solid POD storage.
 
@@ -75,3 +77,10 @@ yarn build
 ```
 
 You can find the built application in the `build` folder.
+
+You can run a static server, for example `serve`, and pass the build folder to it.
+
+```
+serve -s ./build/ -l 3000
+```
+The application is then available at [http://localhost:3000](http://localhost:3000) which you can view in the browser.
